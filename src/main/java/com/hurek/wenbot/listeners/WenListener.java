@@ -80,8 +80,6 @@ public class WenListener implements EventListener<MessageCreateEvent> {
     }
 
     private boolean validateChannelId(Message message) {
-        log.info(message.getChannelId().asString() + " IS ID");
-        log.info(properties.getDevChannelId() + " IS DEV ID");
         return Stream.of(properties.getDevChannelId(), properties.getProdChannelId())
                 .anyMatch(id -> message.getChannelId().asString().equals(id));
     }
