@@ -45,7 +45,7 @@ public class WenListener implements EventListener<MessageCreateEvent> {
 
     @Override
     public boolean resolveCommand(MessageCreateEvent event) {
-        return possiblePatterns().anyMatch(pattern -> event.getMessage().getContent().contains(pattern));
+        return possiblePatterns().anyMatch(pattern -> event.getMessage().getContent().equals(pattern));
     }
 
     private Mono<Message> reply(Message message) {
