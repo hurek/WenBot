@@ -53,7 +53,8 @@ public class WenListener implements EventListener<MessageCreateEvent> {
             File[] files = new File(ANSWERS_DIR).listFiles();
 
             if (files == null) {
-                throw new RuntimeException(); // TODO: 24.08.2021 replace with custom exception
+                log.error("Files not found");
+                return Mono.empty();
             }
 
             List<String> fileNames = Stream.of(files)
