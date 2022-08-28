@@ -17,6 +17,7 @@ import java.util.List;
 @Configuration
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DiscordConfiguration {
+    
     @Value("${wenbot.discord.token}")
     String token;
 
